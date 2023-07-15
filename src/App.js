@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import Calendar from "./components/Calendar";
+import { startOfMonth, startOfWeek } from "date-fns";
+import { LocaleDateContext } from "./contexts";
 
-function App() {
+export default function App() {
+  const currentDate = new Date();
+  const firstDayOfFirstWeek = startOfWeek(startOfMonth(currentDate));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LocaleDateContext.Provider value={{ currentDate, firstDayOfFirstWeek }}>
+      <Calendar />;
+    </LocaleDateContext.Provider>
   );
 }
-
-export default App;

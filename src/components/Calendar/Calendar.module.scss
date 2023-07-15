@@ -1,0 +1,7 @@
+@import "../../common/styles/variables";
+
+.calendar{
+  display: inline-block;
+  position: relative;
+  border: 10px solid $colorBorderCalendar;
+}

@@ -1,0 +1,17 @@
+@import "../../common/styles/variables";
+@import "../../common/styles/templates";
+
+.number {
+  @extend %styleDay;
+  color: grey;
+}
+
+.numberToday {
+  color: $colorRed;
+  border: solid 4px $colorRed;
+  border-radius: 50%;
+}
+
+.numberOtherMonth {
+  color: $backGroundColorMonth;
+}

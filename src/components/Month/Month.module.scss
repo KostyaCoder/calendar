@@ -1,0 +1,14 @@
+@import "../../common/styles/variables";
+
+.month {
+  display: inline-block;
+  background-color: $backGroundColorMonth;
+  padding: 20px;
+}
+
+.titleMonth {
+  padding: 15px;
+  font-size: 40px;
+  font-weight: 900;
+  color: $colorBorderCalendar;
+}
