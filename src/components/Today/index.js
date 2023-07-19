@@ -9,7 +9,7 @@ export default function Today() {
   return (
     <div className={style.today}>
       <p className={style.titleToday}>{format(currentDate, "EEEE")}</p>
-      <p className={style.numberToday}>{currentDate.getDate()}</p>
+      <p className={style.numberToday}>{format(currentDate, "d")}</p>
     </div>
   );
 }

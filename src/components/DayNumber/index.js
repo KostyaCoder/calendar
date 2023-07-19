@@ -1,22 +1,14 @@
-import { useContext } from "react";
-import { LocaleDateContext } from "../../contexts";
 import style from "./DayNumber.module.scss";
 import classNames from "classnames";
+import { format, isThisMonth, isToday } from "date-fns";
 
 export default function DayNumber(props) {
   const { date } = props;
-  const { currentDate } = useContext(LocaleDateContext);
-
-  const isNumberToday =
-    date.getDate() === currentDate.getDate() &&
-    date.getMonth() === currentDate.getMonth();
-
-  const isNumberOtherMonth = date.getMonth() !== currentDate.getMonth();
 
   const addClassNames = classNames(style.number, {
-    [style.numberToday]: isNumberToday,
-    [style.numberOtherMonth]: isNumberOtherMonth,
+    [style.numberToday]: isToday(date),
+    [style.numberOtherMonth]: !isThisMonth(date),
   });
 
-  return <div className={addClassNames}>{date.getDate()}</div>;
+  return <div className={addClassNames}>{format(date, "d")}</div>;
 }
