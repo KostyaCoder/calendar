@@ -10,7 +10,7 @@ export default function Month() {
   const { currentDate } = useContext(LocaleDateContext);
 
   const weeks = [];
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 6; i++) {
     weeks.push(
       <Week
         key={i}
