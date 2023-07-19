@@ -8,13 +8,12 @@ import CONSTANTS from "../../constants.js";
 const { FORMAT_DATE } = CONSTANTS;
 
 export default function Week(props) {
-  const { numberWeek, typeWeek, shift = 0 } = props;
+  const { numberWeek, typeWeek = FORMAT_DATE.NUMBER_DAY } = props;
   const { firstDayOfFirstWeek } = useContext(LocaleDateContext);
-  const firstDayWithShift = addDays(firstDayOfFirstWeek, shift);
 
   const days = [];
   for (let i = 0; i < 7; i++) {
-    const date = addDays(firstDayWithShift, i + 1 + 7 * numberWeek);
+    const date = addDays(firstDayOfFirstWeek, i + 7 * numberWeek);
 
     switch (typeWeek) {
       case FORMAT_DATE.NUMBER_DAY:
@@ -25,7 +24,7 @@ export default function Week(props) {
         break;
 
       default:
-        throw new Error();
+        break;
     }
   }
 
