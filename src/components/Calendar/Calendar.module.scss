@@ -1,7 +1,9 @@
 @import "../../common/styles/variables";
 
-.calendar{
-  display: inline-block;
-  position: relative;
+.calendar {
+  display: flex;
+  width: 700px;
+  min-height: 430px;
   border: 10px solid $colorBorderCalendar;
+  margin: 0 auto;
 }

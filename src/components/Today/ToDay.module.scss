@@ -1,12 +1,7 @@
 @import "../../common/styles/variables";
 
 .today {
-  box-sizing: border-box;
-  display: inline-block;
-  position: absolute;
-  min-width: 50%;
-  min-height: 100%;
-
+  width: 50%;
   color: $backGroundColorMonth;
   background-color: $backGroundColorToday;
   padding: 20px;
@@ -21,5 +16,5 @@
 .numberToday {
   font-weight: 300;
   font-size: 150px;
-  padding-top: 40px;
+  padding-top: 15%;
 }

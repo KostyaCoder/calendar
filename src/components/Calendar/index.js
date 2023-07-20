@@ -13,8 +13,6 @@ export default function Calendar() {
       <div className={style.calendar}>
         <Today />
         <Month />
-
-        <Month />
       </div>
     </LocaleDateContext.Provider>
   );
